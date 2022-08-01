@@ -25,7 +25,7 @@ public class PostController {
         Iterable<Post> posts = postService.findAll();
         return new ResponseEntity<>(posts, HttpStatus.OK);
     }
-    @PostMapping("/add")
+    @PostMapping("")
     public ResponseEntity<Post> createPost(@RequestBody Post post) {
         postService.save(post);
         return new ResponseEntity<>(post, HttpStatus.CREATED);

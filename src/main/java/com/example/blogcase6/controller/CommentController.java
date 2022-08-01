@@ -17,12 +17,12 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
-    @GetMapping("/all")
+    @GetMapping("")
     public ResponseEntity<Iterable<Comment>> showAllComment() {
         Iterable<Comment> comments = commentService.findAll();
         return new ResponseEntity<>(comments, HttpStatus.OK);
     }
-    @PostMapping("/add")
+    @PostMapping("")
     public ResponseEntity<Comment>createComment(@RequestBody Comment comment){
         commentService.save(comment);
         return new ResponseEntity<>(comment, HttpStatus.CREATED);
